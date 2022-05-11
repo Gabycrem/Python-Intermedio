@@ -4,22 +4,14 @@ from modelo import f_error
 from modelo import f_guardar
 from modelo import f_modificar
 from modelo import f_borrar
-
-# from modelo import seleccionado
-# from modelo import crear_base
 from modelo import limpiar_campos
-
-# from modelo import insertar
 from modelo import actualizar_treeview
-
-# from modelo import actualizar_bd
-
 from tkinter import DISABLED, Button
 from tkinter import Label
 from tkinter import Entry
 from tkinter import ttk
 from tkinter import StringVar, IntVar
-import tkinter as tk
+import tkinter as Tk
 from PIL import ImageTk, Image
 
 
@@ -46,7 +38,6 @@ def vista_principal(master):
     # master.geometry("800x700")
     BASE_DIR = os.path.dirname((os.path.abspath(__file__)))
     ruta = os.path.join(BASE_DIR, "logo.jpg")
-
     var_nombre = StringVar()
     var_apellido = StringVar()
     var_dni = IntVar()
@@ -95,7 +86,7 @@ def vista_principal(master):
     logo = Image.open(ruta)
     resize_logo = logo.resize((100, 100))
     logo2 = ImageTk.PhotoImage(resize_logo)
-    mi_logo = ttk.Label(master, image=logo2)
+    mi_logo = Tk.Label(master, image=logo2)
     mi_logo.grid(row=0, column=6, rowspan=4, pady=10)
 
     nombre = Label(master, text="Nombre")
